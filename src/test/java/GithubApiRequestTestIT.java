@@ -35,7 +35,17 @@ public class GithubApiRequestTestIT {
   @Test
   void createRepository() {
     try {
-      boolean created = repositoryApi.createRepository("generate-github-project");
+      boolean created = repositoryApi.createRepository("gtest-project-generate");
+      assertTrue(created);
+    } catch (IOException | InterruptedException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  @Test
+  void createRepositoryFromTemplate() {
+    try {
+      boolean created = repositoryApi.createRepositoryFromTemplate("diego-repo-from-template");
       assertTrue(created);
     } catch (IOException | InterruptedException e) {
       throw new RuntimeException(e);

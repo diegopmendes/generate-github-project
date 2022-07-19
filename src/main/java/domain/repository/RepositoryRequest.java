@@ -6,4 +6,6 @@ import lombok.Data;
 public class RepositoryRequest {
 
   private String name;
+
+  private String owner;
 }
